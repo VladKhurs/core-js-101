@@ -109,7 +109,7 @@ function removeLeadingAndTrailingWhitespaces(value) {
  */
 function repeatString(value, count) {
   let ans = ''
-  for(let i = 0; i < count; i++){
+  for(let i = 0; i < count; i+=1){
     ans+=value
   }
   return ans
@@ -204,8 +204,8 @@ function extractEmails(str) {
  */
 function getRectangleString(width, height) {
   let ans = ''
-  for(let i = 0; i < height; i++){
-    for(let j = 0; j < width; j++){
+  for(let i = 0; i < height; i+=1){
+    for(let j = 0; j < width; j+=1){
       if(i == 0 && j == 0){
         ans += '┌'
       }
@@ -255,7 +255,7 @@ function encodeToRot13(str) {
   let alLo = 'abcdefghijklmnopqrstuvwxyz'
   let ans = ''
   let exc = ' !?.,'
-  for(let  i = 0; i < str.length; i++) {
+  for(let  i = 0; i < str.length; i+=1) {
     if(exc.indexOf(str[i]) !== -1){
       ans += str[i]
     }
