@@ -26,10 +26,10 @@
  *  21 => 'Fizz'
  *
  */
- function getFizzBuzz (num) {
-  if (num % 5 === 0 && num % 3 === 0) return 'FizzBuzz'
-  if (num % 5 === 0) return 'Buzz'
-  return num % 3 === 0 ? 'Fizz' : num
+function getFizzBuzz(num) {
+  if (num % 5 === 0 && num % 3 === 0) return 'FizzBuzz';
+  if (num % 5 === 0) return 'Buzz';
+  return num % 3 === 0 ? 'Fizz' : num;
 }
 
 /**
@@ -43,12 +43,12 @@
  *   5  => 120
  *   10 => 3628800
  */
-function getFactorial (n) {
-  let ans = 1
+function getFactorial(n) {
+  let ans = 1;
   for (let i = 1; i <= n; i += 1) {
-    ans *= i
+    ans *= i;
   }
-  return ans
+  return ans;
 }
 
 /**
@@ -63,12 +63,12 @@ function getFactorial (n) {
  *   5,10  =>  45 ( = 5+6+7+8+9+10 )
  *   -1,1  =>  0  ( = -1 + 0 + 1 )
  */
-function getSumBetweenNumbers (n1, n2) {
-  let c = 0
+function getSumBetweenNumbers(n1, n2) {
+  let c = 0;
   for (let i = n1; i <= n2; i += 1) {
-    c += i
+    c += i;
   }
-  return c
+  return c;
 }
 
 /**
@@ -86,12 +86,12 @@ function getSumBetweenNumbers (n1, n2) {
  *   10,1,1   =>  false
  *   10,10,10 =>  true
  */
-function isTriangle (a, b, c) {
-  if (a === b === c) return true
-  const m = [a, b, c]
-  m.sort((aa, bb) => bb - aa)
-  if (m[0] < m[1] + m[2]) return true
-  return false
+function isTriangle(a, b, c) {
+  if (a === b === c) return true;
+  const m = [a, b, c];
+  m.sort((aa, bb) => bb - aa);
+  if (m[0] < m[1] + m[2]) return true;
+  return false;
 }
 
 /**
@@ -126,9 +126,9 @@ function isTriangle (a, b, c) {
  *   { top:20, left:20, width: 20, height: 20 }    =>  false
  *
  */
-function doRectanglesOverlap (rect1, rect2) {
-  if (rect1.width >= rect2.top && rect1.height >= rect2.left) return true
-  return false
+function doRectanglesOverlap(rect1, rect2) {
+  if (rect1.width >= rect2.top && rect1.height >= rect2.left) return true;
+  return false;
 }
 
 /**
@@ -157,13 +157,13 @@ function doRectanglesOverlap (rect1, rect2) {
  *   { center: { x:0, y:0 }, radius:10 },  { x:10, y:10 }   => false
  *
  */
-function isInsideCircle (circle, point) {
-  const newX = point.x - circle.center.x
-  const newY = point.y - circle.center.y
+function isInsideCircle(circle, point) {
+  const newX = point.x - circle.center.x;
+  const newY = point.y - circle.center.y;
   if ((newX) ** 2 + (newY) ** 2 < (circle.radius) ** 2) {
-    return true
+    return true;
   }
-  return false
+  return false;
 }
 
 /**
@@ -177,15 +177,15 @@ function isInsideCircle (circle, point) {
  *   'abracadabra'  => 'c'
  *   'entente' => null
  */
-function findFirstSingleChar (str) {
-  let ch = ''
+function findFirstSingleChar(str) {
+  let ch = '';
   for (let i = 0; i < str.length; i += 1) {
     if (str.slice(i + 1, str.length).indexOf(str[i]) === -1 && ch.indexOf(str[i]) === -1) {
-      return str[i]
+      return str[i];
     }
-    ch += str[i]
+    ch += str[i];
   }
-  return null
+  return null;
 }
 
 /**
@@ -210,13 +210,13 @@ function findFirstSingleChar (str) {
  *   5, 3, true, true   => '[3, 5]'
  *
  */
-function getIntervalString (a, b, isStartIncluded, isEndIncluded) {
-  let ans = ''
-  ans += isStartIncluded ? '[' : '('
-  ans += `${Math.min(a, b)}, `
-  ans += Math.max(a, b)
-  ans += isEndIncluded ? ']' : ')'
-  return ans
+function getIntervalString(a, b, isStartIncluded, isEndIncluded) {
+  let ans = '';
+  ans += isStartIncluded ? '[' : '(';
+  ans += `${Math.min(a, b)}, `;
+  ans += Math.max(a, b);
+  ans += isEndIncluded ? ']' : ')';
+  return ans;
 }
 
 /**
@@ -231,10 +231,10 @@ function getIntervalString (a, b, isStartIncluded, isEndIncluded) {
  * 'rotator' => 'rotator'
  * 'noon' => 'noon'
  */
-function reverseString (str) {
-  let ans = ''
-  for (let i = str.length - 1; i >= 0; i -= 1) ans += str[i]
-  return ans
+function reverseString(str) {
+  let ans = '';
+  for (let i = str.length - 1; i >= 0; i -= 1) ans += str[i];
+  return ans;
 }
 
 /**
@@ -249,13 +249,13 @@ function reverseString (str) {
  *   87354 => 45378
  *   34143 => 34143
  */
-function reverseInteger (num) {
-  let s = num
-  s = String(num)
-  s = s.split('')
-  s = s.reverse()
-  s = s.join('')
-  return Number(s)
+function reverseInteger(num) {
+  let s = num;
+  s = String(num);
+  s = s.split('');
+  s = s.reverse();
+  s = s.join('');
+  return Number(s);
 }
 
 /**
@@ -278,29 +278,29 @@ function reverseInteger (num) {
  *   5436468789016589 => false
  *   4916123456789012 => false
  */
-function isCreditCardNumber (ccn) {
-  let cccn = ccn
-  cccn = String(ccn)
-  const m = cccn.split('')
-  let res = 0
-  let c = 1
+function isCreditCardNumber(ccn) {
+  let cccn = ccn;
+  cccn = String(ccn);
+  const m = cccn.split('');
+  let res = 0;
+  let c = 1;
   for (let i = 0; i < m.length; i += 1) {
-    m[i] = Number(m[i])
+    m[i] = Number(m[i]);
   }
-  const l = m[m.length - 1]
-  m.pop()
+  const l = m[m.length - 1];
+  m.pop();
   for (let i = m.length - 1; i >= 0; i -= 1) {
     if (c % 2 === 1) {
-      res += ((m[i] * 2) % 10) + Math.floor((m[i] * 2) / 10)
+      res += ((m[i] * 2) % 10) + Math.floor((m[i] * 2) / 10);
     } else {
-      res += m[i]
+      res += m[i];
     }
-    c += 1
+    c += 1;
   }
-  let a = (10 - (res % 10))
-  if (a === 10) a = 0
-  const an = l === a
-  return an
+  let a = (10 - (res % 10));
+  if (a === 10) a = 0;
+  const an = l === a;
+  return an;
 }
 
 /**
@@ -317,16 +317,16 @@ function isCreditCardNumber (ccn) {
  *   10000 ( 1+0+0+0+0 = 1 ) => 1
  *   165536 (1+6+5+5+3+6 = 26,  2+6 = 8) => 8
  */
-function getDigitalRoot (num) {
-  let numm = num
-  numm = String(num)
-  numm = numm.split('')
-  let ans = 0
+function getDigitalRoot(num) {
+  let numm = num;
+  numm = String(num);
+  numm = numm.split('');
+  let ans = 0;
   for (let i = 0; i < numm.length; i += 1) {
-    ans += Number(numm[i])
+    ans += Number(numm[i]);
   }
-  if (ans < 10) return ans
-  return (ans % 10) + Math.floor(ans / 10)
+  if (ans < 10) return ans;
+  return (ans % 10) + Math.floor(ans / 10);
 }
 
 /**
@@ -350,23 +350,23 @@ function getDigitalRoot (num) {
  *   '{)' = false
  *   '{[(<{[]}>)]}' = true
  */
-function isBracketsBalanced (str) {
-  const brOp = '[{(<'
-  const brCl = ']})>'
-  let times = Math.floor(str.length / 2)
-  let v = 0
-  let ss = str
+function isBracketsBalanced(str) {
+  const brOp = '[{(<';
+  const brCl = ']})>';
+  let times = Math.floor(str.length / 2);
+  let v = 0;
+  let ss = str;
   while (ss.length > 0 && times > 0) {
     for (let i = 0; i < ss.length; i += 1) {
-      v = brOp.indexOf(ss[i])
+      v = brOp.indexOf(ss[i]);
       if (v === brCl.indexOf(ss[i + 1]) && ss[i] === brOp[v]) {
-        ss = ss.replace(ss[i] + ss[i + 1], '')
-        break
+        ss = ss.replace(ss[i] + ss[i + 1], '');
+        break;
       }
     }
-    times -= 1
+    times -= 1;
   }
-  return ss === ''
+  return ss === '';
 }
 
 /**
@@ -389,15 +389,15 @@ function isBracketsBalanced (str) {
  *    365, 4  => '11231'
  *    365, 10 => '365'
  */
-function toNaryString (num, n) {
+function toNaryString(num, n) {
   // return num.toString(n)
-  let ans = ''
-  let nn = num
+  let ans = '';
+  let nn = num;
   while (nn > 0) {
-    ans = (nn % n) + ans
-    nn = Math.floor(nn / n)
+    ans = (nn % n) + ans;
+    nn = Math.floor(nn / n);
   }
-  return Number(ans)
+  return Number(ans);
 }
 
 /**
@@ -412,32 +412,32 @@ function toNaryString (num, n) {
  *   ['/web/assets/style.css', '/.bin/mocha',  '/read.me'] => '/'
  *   ['/web/favicon.ico', '/web-scripts/dump', '/verbalizer/logs'] => '/'
  */
-function getCommonDirectoryPath (pathes) {
+function getCommonDirectoryPath(pathes) {
   for (let i = 0; i < pathes.length; i += 1) {
-    if (pathes[0][0] !== pathes[i][0]) return ''
+    if (pathes[0][0] !== pathes[i][0]) return '';
   }
-  let path = '/'
-  let pp = pathes
-  pp = pp.map((e) => e.split('/'))
-  let count = pp[0].length
+  let path = '/';
+  let pp = pathes;
+  pp = pp.map((e) => e.split('/'));
+  let count = pp[0].length;
   for (let i = 0; i < pp.length; i += 1) {
     if (pp[i].length < count) {
-      count = pp[i].length
+      count = pp[i].length;
     }
   }
-  let isPath = 0
-  let compar = ''
+  let isPath = 0;
+  let compar = '';
   for (let k = 0; k < count; k += 1) {
-    compar = pp[0][k]
+    compar = pp[0][k];
     for (let i = 0; i < pathes.length; i += 1) {
-      if (compar === pp[i][k]) isPath += 1
+      if (compar === pp[i][k]) isPath += 1;
     }
     if (isPath === pp.length) {
-      if (compar !== '') path += `${compar}/`
+      if (compar !== '') path += `${compar}/`;
     }
-    isPath = 0
+    isPath = 0;
   }
-  return path
+  return path;
 }
 
 /**
@@ -458,22 +458,22 @@ function getCommonDirectoryPath (pathes) {
  *                         [ 6 ]]
  *
  */
-function getMatrixProduct (m1, m2) {
-  let m = [[]]
-  if (m1.length === 3) m = [[], [], []]
-  let box = 0
-  let per = 0
-  let kk = 0
+function getMatrixProduct(m1, m2) {
+  let m = [[]];
+  if (m1.length === 3) m = [[], [], []];
+  let box = 0;
+  let per = 0;
+  let kk = 0;
   for (let k = 0; k < (m2[0].length) ** 2; k += 1) {
-    box = 0
-    kk = Math.floor(k / 3)
-    per = k % 3
+    box = 0;
+    kk = Math.floor(k / 3);
+    per = k % 3;
     for (let j = 0; j < m1[0].length; j += 1) {
-      box += m1[kk][j] * m2[j][per]
+      box += m1[kk][j] * m2[j][per];
     }
-    m[kk].push(box)
+    m[kk].push(box);
   }
-  return m
+  return m;
 }
 
 /**
@@ -506,32 +506,34 @@ function getMatrixProduct (m1, m2) {
  *    [    ,   ,    ]]
  *
  */
-function evaluateTicTacToePosition (position) {
-  const m = []
-  const pos = [[], []]
+ function evaluateTicTacToePosition(position) {
+  const m = [];
+  const pos = [[], []];
   for (let i = 0; i < 3; i += 1) {
     for (let j = 0; j < 3; j += 1) {
-      m.push(position[i][j])
+      m.push(position[i][j]);
     }
   }
   for (let i = 0; i < m.length; i += 1) {
-    if (m[i] === 'X') pos[0].push(i)
-    if (m[i] === '0') pos[1].push(i)
+    if (m[i] === 'X') pos[0].push(i);
+    if (m[i] === '0') pos[1].push(i);
   }
-  if (pos[0].length < 3 && pos[1].length < 3) return undefined
-  const pls = ['X', '0']
-  const first = [0, 4, 8]
-  const con = [first, [2, 4, 6], [0, 1, 2], [3, 4, 5], [6, 7, 8], [0, 3, 6], [1, 4, 7], [2, 5, 8]]
+  if (pos[0].length < 3 && pos[1].length < 3) return undefined;
+  const pls = ['X', '0'];
+  const first = [0, 4, 8];
+  const con = [first, [2, 4, 6], [0, 1, 2], [3, 4, 5], [6, 7, 8], [0, 3, 6], [1, 4, 7], [2, 5, 8]];
   for (let i = 0; i < pls.length; i += 1) {
     for (let j = 0; j < con.length; j += 1) {
-      if (pos[i].indexOf(con[j][0]) !== -1 &&
-      pos[i].indexOf(con[j][1]) !== -1 &&
+      if (pos[i].indexOf(con[j][0]) !== -1
+      &&
+      pos[i].indexOf(con[j][1]) !== -1
+      &&
       pos[i].indexOf(con[j][2]) !== -1) {
-        return pls[i]
+        return pls[i];
       }
     }
   }
-  return undefined
+  return undefined;
 }
 
 module.exports = {
@@ -551,5 +553,5 @@ module.exports = {
   toNaryString,
   getCommonDirectoryPath,
   getMatrixProduct,
-  evaluateTicTacToePosition
-}
+  evaluateTicTacToePosition,
+};
