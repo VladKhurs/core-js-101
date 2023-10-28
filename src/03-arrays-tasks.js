@@ -647,7 +647,6 @@ function distinct(arr) {
  *   }
  */
 
-/* global Map */
 function group(array, keySelector, valueSelector) {
   const countriesDef = [];
   array.map((e) => {
