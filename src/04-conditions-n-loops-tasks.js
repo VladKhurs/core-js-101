@@ -506,32 +506,34 @@ function getMatrixProduct(m1, m2) {
  *    [    ,   ,    ]]
  *
  */
-function evaluateTicTacToePosition (position) {
-  const m = []
-  const pos = [[], []]
+function evaluateTicTacToePosition(position) {
+  const m = [];
+  const pos = [[], []];
   for (let i = 0; i < 3; i += 1) {
     for (let j = 0; j < 3; j += 1) {
-      m.push(position[i][j])
+      m.push(position[i][j]);
     }
   }
   for (let i = 0; i < m.length; i += 1) {
-    if (m[i] === 'X') pos[0].push(i)
-    if (m[i] === '0') pos[1].push(i)
+    if (m[i] === 'X') pos[0].push(i);
+    if (m[i] === '0') pos[1].push(i);
   }
-  if (pos[0].length < 3 && pos[1].length < 3) return undefined
-  const pls = ['X', '0']
-  const first = [0, 4, 8]
-  const con = [first, [2, 4, 6], [0, 1, 2], [3, 4, 5], [6, 7, 8], [0, 3, 6], [1, 4, 7], [2, 5, 8]]
+  if (pos[0].length < 3 && pos[1].length < 3) return undefined;
+  const pls = ['X', '0'];
+  const first = [0, 4, 8];
+  const con = [first, [2, 4, 6], [0, 1, 2], [3, 4, 5], [6, 7, 8], [0, 3, 6], [1, 4, 7], [2, 5, 8]];
   for (let i = 0; i < pls.length; i += 1) {
     for (let j = 0; j < con.length; j += 1) {
-      if (pos[i].indexOf(con[j][0]) !== -1 &&
-      pos[i].indexOf(con[j][1]) !== -1 &&
+      if (pos[i].indexOf(con[j][0]) !== -1
+      &&
+      pos[i].indexOf(con[j][1]) !== -1
+      &&
       pos[i].indexOf(con[j][2]) !== -1) {
-        return pls[i]
+        return pls[i];
       }
     }
   }
-  return undefined
+  return undefined;
 }
 
 module.exports = {
